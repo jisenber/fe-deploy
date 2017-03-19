@@ -1,0 +1,37 @@
+<section class="login-form">
+  <h1>Grouper Fans, log in to see your profile!</h1>
+  <form
+    name="loginForm"
+    ng-submit="loginCtrl.login()" novalidate>
+    <div class = "form-group">
+    <div
+      ng-class="{
+        'error': loginForm.username.$invalid,
+        'success': loginForm.username.$valid,
+      }">
+      <input type="text"
+        class = "form-control"
+        name="username"
+        placeholder="username"
+        ng-minlength="4"
+        ng-model="loginCtrl.user.username" required>
+
+      <input type="text" placeholder="email" class = "form-control">
+    </div>
+
+    <div
+      ng-class="{
+        'error': loginForm.password.$invalid && loginForm.$submitted,
+        'success': loginForm.password.$valid,
+      }">
+      <input type="password" name="password"
+        class = "form-control"
+        ng-disabled="loginForm.username.$invalid"
+        placeholder="password"
+        ng-minlength="3"
+        ng-model="loginCtrl.user.password" required>
+    </div>
+  </div>
+    <button class="btn btn-primary btn-lg active">sign in</button>
+  </form>
+</section>

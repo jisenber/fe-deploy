@@ -1,0 +1,16 @@
+@import "lib/bootstrap/_custom-bootstrap";
+
+
+body {
+  display: grid;
+}
+
+form {
+  padding: 1em;
+  max-width: 60%;
+  position: flex;
+}
+
+.form-control {
+  padding: 1em;
+}

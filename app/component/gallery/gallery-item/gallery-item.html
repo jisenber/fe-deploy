@@ -1,0 +1,15 @@
+<table class = "table table-hover">
+  <div class = "current-item" ng-if="!galleryItemCtrl.showEditGallery">
+<tr scope="row">
+  <td> {{ galleryItemCtrl.gallery.name | customUppercase }} </td>
+  <td> {{ galleryItemCtrl.gallery.desc | lowercase }} </td>
+  <td> {{ galleryItemCtrl.gallery._id }} </td>
+  <td>
+    <edit-gallery ng-if="galleryItemCtrl.showEditGallery" gallery="galleryItemCtrl.gallery"></edit-gallery>
+    <button class="btn-std" ng-click="galleryItemCtrl.showEditGallery = !galleryItemCtrl.showEditGallery" ng-hide="galleryItemCtrl.showEditGallery">Edit</button>
+    <button class="btn-std" ng-show="galleryItemCtrl.showEditGallery" ng-click="galleryItemCtrl.showEditGallery = !galleryItemCtrl.showEditGallery">Cancel</button>
+    <button class="btn-std" ng-click="galleryItemCtrl.deleteGallery(galleryItemCtrl.gallery._id)">Delete</button>
+  </td>
+</tr>
+</div>
+</table>

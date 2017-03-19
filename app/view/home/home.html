@@ -1,0 +1,30 @@
+<section class="home">
+  <h1 class = "jumbotron">Welcome Home</h1>
+  <create-gallery></create-gallery>
+
+  <div class ="search-bar-above"><b>SEARCH</b></div>
+  <div class = "gallery-count-above"><b>How many Galleries to display</b></div>
+  <input type="text" ng-model="homeCtrl.searchText" class="search-bar-below">
+  <input type="number" ng-model="homeCtrl.galleryLimit" value="100" class = "gallery-count-below">
+  <br />
+  <br />
+  <br />
+  <table class="table">
+    <tr>
+      <th scope="row">NAME</th>
+      <th scope="row">DESCRIPTION</th>
+      <th scope="row">ID</th>
+    </tr>
+  </table>
+  <uib-accordion close-others="oneAtATime">
+  <div uib-accordion-group class="panel-default" heading="TOGGLE GALLERIES">
+  <gallery-item
+  ng-repeat="item in homeCtrl.galleries | fuzzySearch: homeCtrl.searchText | sortGalleries: homeCtrl.galleryLimit"
+  gallery="item"
+  delete-done="homeCtrl.galleryDeleteDone(galleryData)"
+  ng-click="homeCtrl.currentGallery = item">
+</gallery-item>
+</div>
+</uib-accordion>
+  <thumbnail-container ng-if="homeCtrl.currentGallery" gallery="homeCtrl.currentGallery"></thumbnail-container>
+</section>

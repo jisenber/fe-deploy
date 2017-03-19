@@ -1,0 +1,29 @@
+<section class="signup">
+  <h1>Sign Up to receive the latest grouper news</h1>
+  <form class="form-horizontal"
+    ng-submit="signupCtrl.signup(signupCtrl.user)"
+    no-validate>
+    <div class="form-group">
+
+      <input class="form-control"
+        type="text"
+        placeholder="name"
+        ng-minlength="4"
+        ng-model="signupCtrl.user.username" required>
+
+      <input class="form-control"
+        type="email"
+        placeholder="email"
+        ng-model="signupCtrl.user.email">
+
+      <input class="form-contorl"
+        type="password"
+        placeholder="password"
+        ng-minlength="3"
+        ng-model="signupCtrl.user.password" required>
+        <br /><br />
+
+      <input type="submit" class="btn btn-primary btn-lg active" value="sign up">
+    </div>
+  </form>
+</section>

@@ -30,7 +30,7 @@ function galleryService($q, $log, $http, authService) {
     .then(token => {
       let req = {
         method: 'POST',
-        url: `${API_URL}/api/gallery`,
+        url: `${__API_URL__}/api/gallery`,
         headers: {
           Accept: 'application/json',
           'Content-Type': 'application/json',
@@ -57,7 +57,7 @@ function galleryService($q, $log, $http, authService) {
 
     return authService.getToken()
     .then(token => {
-      let url = `${API_URL}/api/gallery`;
+      let url = `${__API_URL__}/api/gallery`;
       let config = {
         headers: {
           Accept: 'application/json',
@@ -81,7 +81,7 @@ function galleryService($q, $log, $http, authService) {
 
     return authService.getToken()
     .then(token => {
-      let url = `${API_URL}/api/gallery/${galleryID}`;
+      let url = `${__API_URL__}/api/gallery/${galleryID}`;
       let config = {
         headers: {
           Accept: 'application/json',
@@ -112,7 +112,7 @@ function galleryService($q, $log, $http, authService) {
 
     return authService.getToken()
     .then(token => {
-      let url = `${API_URL}/api/gallery/${galleryID}`;
+      let url = `${__API_URL__}/api/gallery/${galleryID}`;
       let config = {
         headers: {
           Authorization: `Bearer ${token}`

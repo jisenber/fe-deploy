@@ -42,7 +42,7 @@ function authService($q, $log, $http, $window) {
   service.signup = function(user) {
     $log.debug('authService.signup()');
 
-    let url = `${API_URL}/api/signup`;
+    let url = `${__API_URL__}/api/signup`;
     let config = {
       headers: {
         'Content-Type': 'application/json',
@@ -64,7 +64,7 @@ function authService($q, $log, $http, $window) {
   service.login = function(user) {
     $log.debug('authService.login()');
 
-    let url = `${API_URL}/api/login`;
+    let url = `${__API_URL__}/api/login`;
     let base64 = $window.btoa(`${user.username}:${user.password}`);
     let config = {
       headers: {
